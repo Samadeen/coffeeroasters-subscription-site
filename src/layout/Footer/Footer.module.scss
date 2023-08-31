@@ -1,0 +1,60 @@
+@use '../../sass//utils/functions' as fn;
+@use '../../sass/global/colors' as color;
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/breakpoints';
+
+.footer_container {
+  @include flex_justifyBetween;
+  max-width: 80rem;
+  margin: 5.5rem auto;
+  padding: 2.94rem 5.31rem;
+  background-color: #2c343e;
+
+  @media (max-width: 820px) {
+    max-width: 43rem;
+    @include flex_centered;
+    flex-direction: column;
+    gap: 2.43rem;
+  }
+  @media (max-width: 520px) {
+    max-width: 20.4375rem;
+    flex-direction: column;
+  }
+  .footer_nav {
+    @include flex_justifyBetween;
+    gap: 6.43rem;
+
+    @media (max-width: 820px) {
+      @include flex_centered;
+      flex-direction: column;
+      gap: 2.43rem;
+    }
+
+    .nav {
+      @include flex_centered;
+      gap: 2rem;
+      flex: 70%;
+
+      @media (max-width: 520px) {
+        flex-direction: column;
+        margin-bottom: 2rem;
+      }
+      a {
+        color: color.$grey;
+        font-family: 'Barlow';
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 0.9375rem; /* 125% */
+        letter-spacing: 0.05769rem;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .socials {
+    @include flex;
+    gap: 2rem;
+  }
+}
